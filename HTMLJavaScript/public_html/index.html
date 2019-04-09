@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript object</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>JavaScript object</h2>
+        <p id="demo"></p>
+        <p id="men"></p>
+        <p id="test"></p>
+        <p id="btn">Click the button to alert the text of this paragraph</p>
+        
+        <button onclick="myFunction()">Try it</button>
+        <br>
+        <button onclick="displayDate()">The time is?</button>
+        <p id="date"></p>
+        <script>
+            var car = {type: "Fiat", model: 500, color: "white", weight: 850};
+            document.getElementById("demo").innerHTML = "The car is: <br>" + car.type + "<br>" + car.model + "<br>" + car.color + "<br>" + car.weight + "kg";
+
+            let person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue",
+                id: 5566,
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+
+//            document.getElementById("men").innerHTML = person.firstName + " " + person.age;
+//            document.getElementById("men").innerHTML = person["firstName"] + " " + person["age"];
+//            document.querySelector("#men").innerHTML = person.firstName + " " + person.age;
+
+
+            document.querySelector("#men").innerHTML = person.fullName();
+            
+            function myFunction(){
+                alert(document.querySelector('#btn').textContent);
+                document.querySelector('#test').innerHTML="Vasya";
+            };
+            
+            function displayDate(){
+                document.querySelector('#date').textContent = Date();
+            }
+        </script>
+    </body>
+</html>

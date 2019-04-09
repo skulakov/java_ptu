@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Set Date</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Get Set Date</h1>
+        <p>полночь Янв. 1, 1970 в мсек: <span id="mlsc"></span></p>
+        <p>Full Year: <span id="year"></span></p>
+        <p>Month: <span id="month"></span></p>
+        <p>Month: <span id="month2"></span></p>
+        <p>Day: <span id="day"></span></p>
+        <p>Hours: <span id="hours"></span></p>
+        <p>Minutes: <span id="minutes"></span></p>
+        <p>Seconds: <span id="seconds"></span></p>
+        <p>MiliSeconds: <span id="milisec"></span></p>
+
+        <button onclick="myFunction()">Click me</button>
+        <script>
+            var d = new Date();
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.querySelector('#mlsc').innerHTML = d.getTime();
+            document.querySelector('#year').innerHTML = d.getFullYear();
+            document.querySelector('#month').innerHTML = d.getMonth() + 1;
+            document.querySelector('#month2').innerHTML = months[d.getMonth()];
+            document.querySelector('#day').innerHTML = d.getDay();
+            document.querySelector('#hours').innerHTML = d.getHours();
+            document.querySelector('#minutes').innerHTML = d.getMinutes();
+            document.querySelector('#seconds').innerHTML = d.getSeconds();
+            document.querySelector('#milisec').innerHTML = d.getMilliseconds();
+
+            function myFunction() {
+                alert(document.querySelector('#year').innerHTML = d.getDay() + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds());
+            };
+        </script>
+    </body>
+</html>
